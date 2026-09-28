@@ -1,4 +1,10 @@
-const projects = [
+type WorkProject = {
+  title: string;
+  image: string;
+  href?: string;
+};
+
+const projects: WorkProject[] = [
   {
     title: "Financial Professionals Portal",
     image: "/work/thumbnails/financial-professionals.png",
@@ -14,7 +20,7 @@ const projects = [
     image: "/work/thumbnails/air-quality.png",
     href: "/unlock?study=air-quality-experience",
   },
-] as const;
+];
 
 export function EyWork() {
   return (

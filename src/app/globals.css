@@ -1,26 +1,41 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
+/*
+  Homepage semantics come from the Desktop, Tablet, and Mobile frames.
+  The extra colors are the Design System swatches, stored so they can be
+  used later without changing the screens that do not reference them.
+*/
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+  --font-sans: var(--font-inter);
+  --font-logo: var(--font-eclipse), var(--font-inter), sans-serif;
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --color-background: #ffffff;
+  --color-ink: #08090a; /* text/primary, style guide "Main site background" */
+  --color-muted: #a1a1aa; /* text/secondary, style guide "Supporting text" */
+  --color-heading: #0f1012; /* surface/1, style guide "Cards / sections" */
+  --color-surface: #f4f5f8; /* surface/2, style guide "Main headings" */
+  --color-elevated: #151619; /* style guide "Elevated cards / hover" */
+  --color-caption: #6f7078; /* style guide "Metadata / captions" */
+  --color-divider: #24262b; /* style guide "Borders / dividers" */
+  --color-line: #34363d; /* border/strong, style guide "Hover / stronger separators" */
+  --color-accent: #f46bd8; /* style guide "Main accent" */
+  --color-accent-soft: #fdcdfb; /* style guide "Hover / highlight" */
+  --color-accent-deep: #9d2d74; /* style guide "Subtle accent background" */
+  --color-blue: #579dff; /* case study section labels */
+  --color-slate: #61697a; /* case study "The Problem" / "Solution" labels */
+  --color-red: #ff2c2c; /* case study challenge titles */
+  --color-green: #5ac1bd; /* air quality section labels */
+  --color-light-green: #e7f6f5; /* air quality card background */
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--color-background);
+  color: var(--color-ink);
+  font-family: var(--font-inter), Inter, sans-serif;
+}
+
+@keyframes caret-blink {
+  50% {
+    opacity: 0;
+  }
 }
